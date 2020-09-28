@@ -44,10 +44,9 @@ async def listmulti(li):
 @app.get("/listascii")
 async def listascii(li):
     ls = toasciilist(li)
-    sum = ""
     for i in ls:
-        sum += ls[i]+','
-    return sum
+        text = ls[i]+','
+    return text
 
 def toasciilist(li):
     ls = []
