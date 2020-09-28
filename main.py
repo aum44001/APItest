@@ -37,10 +37,11 @@ async def powf(a: int = 0, b: int = 0):
 @app.get("/listmulti")
 async def listmulti(li):
     ls = tonumlist(li)
-    sum = 1
-    for x in ls:
-        sum *= ls(x)
-        print(sum)
+    num = 0
+    sum = 0
+    for i in ls:
+        num = ls(i)
+        sum += num
     return sum
 
 
