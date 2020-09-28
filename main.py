@@ -43,12 +43,14 @@ async def listmulti(li):
 
 @app.get("/listascii")
 async def listascii(li):
-    ls = toasciilist(li)
-    for i in ls:
-        text += string(ls)+','
-    return ls
+    
+    #ls = toasciilist(li)
+    for i in li:
+        text += hex(ord(i))+","
+        #text += string(ls)+','
+    return text
 
-def toasciilist(li):
+#def toasciilist(li):
     ls = []
     for i in li:
         ls.append(hex(ord(i)))
