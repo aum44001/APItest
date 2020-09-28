@@ -31,8 +31,8 @@ async def mul(a: int = 0, b: int = 0):
     return a*b
 
 @app.get("/pow")
-async def mul(a: int = 0, b: int = 0):
-    
+async def powf(a: int = 0, b: int = 0):
+
     return pow(a,b)
 
 
