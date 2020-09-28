@@ -44,7 +44,7 @@ async def listmulti(li):
 @app.get("/listascii")
 async def listascii(li):
     text = ""
-    cont = 1
+    count = 1
     for i in li:
         if(count < len(li)):
             count += 1
