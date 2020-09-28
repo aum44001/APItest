@@ -47,7 +47,7 @@ async def listascii(li):
     cont = 1
     for i in li:
         if(count < len(li)):
-            count++
+            count += 1
             text += hex(ord(i))+","
         else:
             text += hex(ord(i))
