@@ -46,6 +46,8 @@ async def listascii(li):
     text = ""
     for i in li:
         text += hex(ord(i))
+        if fine in i 
+            text += ","
     return text
 
 
