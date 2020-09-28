@@ -140,7 +140,7 @@ def google_search(text):
         'Connection': 'keep-alive',
         'Upgrade-Insecure-Requests': '1'
     }
-    url = 'https://www.youtube.com/results?search_query=' + str(text)
+    url = 'https://www.google.com/search?q=' + str(text)
     res = requests.get(url, headers = headers)
     soup = BeautifulSoup(res.content, 'html.parser')
     
@@ -169,7 +169,7 @@ def video_search(text):
         'Connection': 'keep-alive',
         'Upgrade-Insecure-Requests': '1'
     }
-    url = 'https://www.google.com/search?q=' + str(text)
+    url = 'https://www.youtube.com/results?search_query=' + str(text)
     res = requests.get(url, headers = headers)
     soup = BeautifulSoup(res.content, 'html.parser')
     
