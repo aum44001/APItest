@@ -45,9 +45,11 @@ async def listmulti(li):
 async def listascii(li):
     text = ""
     for i in li:
-        text += hex(ord(i))
-        if i.next 
-            text += ","
+        if i < len(li):
+            text += hex(ord(i))+","
+        else:
+            text += hex(ord(i))
+        
     return text
 
 
