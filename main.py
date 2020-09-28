@@ -169,7 +169,7 @@ def video_search(text):
         'Connection': 'keep-alive',
         'Upgrade-Insecure-Requests': '1'
     }
-    url = 'https://www.google.com/search?q=' + str(text) + '&newwindow=1&sxsrf=ALeKk01-tUNSx0IRjo40N5kNv6K2UAts9w:1601286110133&source=lnms&tbm=vid&sa=X&ved=2ahUKEwj4rJzOx4vsAhXsKqYKHcLIAP8Q_AUoAnoECB4QBA&biw=1438&bih=700&dpr=1.25'
+    url = 'https://www.google.com/search?q=site:youtube.com' + str(text)
     res = requests.get(url, headers = headers)
     soup = BeautifulSoup(res.content, 'html.parser')
     
