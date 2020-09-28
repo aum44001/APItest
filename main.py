@@ -39,7 +39,7 @@ async def listmulti(li):
     ls = tonumlist(li)
     num = 0
     sum = 1
-    for i in ls:
+    for i in range(len(ls)):
         num = ls(i)
         sum = sum * num
     return sum
