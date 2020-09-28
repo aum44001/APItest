@@ -44,8 +44,10 @@ async def listmulti(li):
 @app.get("/listascii")
 async def listascii(li):
     text = ""
+    cont = 1
     for i in li:
-        if i < len(li):
+        if(count < len(li)):
+            count++
             text += hex(ord(i))+","
         else:
             text += hex(ord(i))
