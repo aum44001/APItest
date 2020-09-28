@@ -43,7 +43,7 @@ async def listmulti(li):
 
 @app.get("/listascii")
 async def listascii(li):
-    
+    text = ""
     for i in li:
         text += hex(ord(i))
     return text
