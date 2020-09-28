@@ -4,6 +4,7 @@
 from fastapi import FastAPI
 import uvicorn
 import numpy as np
+import urllib
 import re
 import requests
 from bs4 import BeautifulSoup
@@ -169,7 +170,7 @@ def video_search(text):
         'Connection': 'keep-alive',
         'Upgrade-Insecure-Requests': '1'
     }
-    url = 'https://www.google.com/search?q=site:youtube.com%20' + str(text)
+    url = 'https://www.google.com/search?q=site:youtube.com ' + urllib.parse.quote(str(text))
     res = requests.get(url, headers = headers)
     soup = BeautifulSoup(res.content, 'html.parser')
     
