@@ -37,12 +37,22 @@ async def powf(a: int = 0, b: int = 0):
 @app.get("/listmulti")
 async def listmulti(li):
     ls = tonumlist(li)
-    #num = 0
-    #sum = 1
     for i in ls:
         sum *= ls
     return sum
 
+@app.get("/listascii")
+async def listascii(li):
+    ls = toasciilist(li)
+    for i in ls:
+        sum = sum+ls+','
+    return sum
+
+def toasciilist(li):
+    ls = []
+    for i in li
+        ls.append(hex(ord(i)))
+    return ls
 
 def tonumlist(li):
     ls = li.split(',')
