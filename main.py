@@ -40,6 +40,7 @@ async def listmulti(li):
     sum = 1
     for x in ls:
         sum *= ls(x)
+        print(sum)
     return sum
 
 
