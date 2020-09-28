@@ -44,17 +44,11 @@ async def listmulti(li):
 @app.get("/listascii")
 async def listascii(li):
     
-    #ls = toasciilist(li)
     for i in li:
-        text += hex(ord(i))+","
-        #text += string(ls)+','
+        text += hex(ord(i))
     return text
 
-#def toasciilist(li):
-    ls = []
-    for i in li:
-        ls.append(hex(ord(i)))
-    return ls
+
 
 def tonumlist(li):
     ls = li.split(',')
