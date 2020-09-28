@@ -38,10 +38,10 @@ async def powf(a: int = 0, b: int = 0):
 async def listmulti(li):
     ls = tonumlist(li)
     num = 0
-    sum = 0
+    sum = 1
     for i in ls:
         num = ls(i)
-        sum += num
+        sum = sum * num
     return sum
 
 
