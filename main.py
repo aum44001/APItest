@@ -26,7 +26,7 @@ async def test():
 async def add(a: int = 0, b: int = 0):
     return a+b
 
-@app.get("/mul")
+@app.get("/mul")i
 async def mul(a: int = 0, b: int = 0):
     return a*b
 
@@ -45,7 +45,7 @@ async def listmulti(li):
 async def listascii(li):
     ls = toasciilist(li)
     for i in ls:
-        sum += ls+','
+        sum = ls[i]+','
     return sum
 
 def toasciilist(li):
