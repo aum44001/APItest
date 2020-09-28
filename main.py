@@ -26,7 +26,7 @@ async def test():
 async def add(a: int = 0, b: int = 0):
     return a+b
 
-@app.get("/mul")i
+@app.get("/mul")
 async def mul(a: int = 0, b: int = 0):
     return a*b
 
