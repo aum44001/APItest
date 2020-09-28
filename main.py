@@ -45,7 +45,7 @@ async def listmulti(li):
 async def listascii(li):
     ls = toasciilist(li)
     for i in ls:
-        text += ls+','
+        text += string(ls)+','
     return text
 
 def toasciilist(li):
