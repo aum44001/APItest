@@ -141,7 +141,7 @@ def google_search(text):
         'Connection': 'keep-alive',
         'Upgrade-Insecure-Requests': '1'
     }
-    url = 'https://www.google.com/search?q=' + str(text)
+    url = 'https://www.google.com/search?q=' + urllib.parse.quote(str(text))
     res = requests.get(url, headers = headers)
     soup = BeautifulSoup(res.content, 'html.parser')
     
@@ -160,31 +160,7 @@ def google_search(text):
 
 @app.get("/video-search",response_class=PlainTextResponse)
 def video_search(text):
-    
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:81.0) Gecko/20100101 Firefox/81.0',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-        'Accept-Encoding': 'gzip, deflate',
-        'DNT': '1',
-        'Connection': 'keep-alive',
-        'Upgrade-Insecure-Requests': '1'
-    }
-    url = 'https://www.google.com/search?q=site:youtube.com ' + urllib.parse.quote(str(text))
-    res = requests.get(url, headers = headers)
-    soup = BeautifulSoup(res.content, 'html.parser')
-    
-    t = soup.findAll('div', {'class':"r"})
-    i = 0
-    result = ''
-    for a in t:
-        href = a.a['href']
-        head = a.h3.text
-        result = result + head + '<br>' + href + '<br><br>'
-        i += 1
-        if(i >= 5):
-            break
-    
+    result = google_search("site:youtube.com "+text)
     return(result)
 
 
