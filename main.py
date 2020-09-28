@@ -50,7 +50,7 @@ async def listascii(li):
 
 def toasciilist(li):
     ls = []
-    for i in li
+    for i in li:
         ls.append(hex(ord(i)))
     return ls
 
